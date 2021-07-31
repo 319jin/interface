@@ -1,0 +1,10 @@
+2021-07-20 08:53:18,127 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 08:53:18,616 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 08:53:18,768 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 08:53:18,912 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 08:53:19,413 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 10:44:03,558 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 10:44:04,026 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 10:44:04,180 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 10:44:04,370 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-20 10:44:04,991 test_01.py[line: 139] INFO: tuple index out of range

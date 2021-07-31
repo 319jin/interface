@@ -1,0 +1,115 @@
+2021-07-21 18:10:46,607 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-21 18:11:11,715 test_01.py[line: 70] INFO: '获取验证码，连续3小时有' not found in '操作成功'
+2021-07-21 18:11:11,955 test_01.py[line: 79] INFO: 0 != -1
+2021-07-21 18:28:12,865 test_01.py[line: 79] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-21 18:28:13,061 test_01.py[line: 139] INFO: tuple index out of range
+2021-07-21 18:32:02,650 test_01.py[line: 120] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:32:31,719 test_01.py[line: 120] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:33:45,771 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:35:40,805 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:36:45,446 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:45:03,351 test_01.py[line: 79] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-21 18:45:03,551 test_01.py[line: 142] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-21 18:45:03,677 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:45:11,558 test_01.py[line: 142] INFO: list indices must be integers or slices, not str
+2021-07-21 18:45:11,724 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:46:26,166 test_01.py[line: 144] INFO: list indices must be integers or slices, not str
+2021-07-21 18:46:26,338 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:46:37,964 test_01.py[line: 144] INFO: list indices must be integers or slices, not str
+2021-07-21 18:46:38,130 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:47:30,241 test_01.py[line: 144] INFO: 'ZhangSan02' != 'ZhangSan01'
+- ZhangSan02
+?          ^
++ ZhangSan01
+?          ^
+
+2021-07-21 18:47:30,459 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:49:24,767 test_01.py[line: 79] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-21 18:49:24,910 test_01.py[line: 144] INFO: 'ZhangSan02' != 'ZhangSan01'
+- ZhangSan02
+?          ^
++ ZhangSan01
+?          ^
+
+2021-07-21 18:49:25,019 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:49:33,359 test_01.py[line: 144] INFO: list indices must be integers or slices, not str
+2021-07-21 18:49:33,520 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:51:16,757 test_01.py[line: 145] INFO: list indices must be integers or slices, not str
+2021-07-21 18:51:16,926 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:53:20,249 test_01.py[line: 145] INFO: list indices must be integers or slices, not str
+2021-07-21 18:53:20,415 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:55:18,574 test_01.py[line: 147] INFO: list indices must be integers or slices, not str
+2021-07-21 18:55:18,785 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:56:45,894 test_01.py[line: 147] INFO: Cannot convert {'data': 787} to Excel
+2021-07-21 18:56:46,069 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 18:59:34,086 test_01.py[line: 147] INFO: Cannot convert {'data': 787} to Excel
+2021-07-21 18:59:34,248 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 19:00:56,361 test_01.py[line: 147] INFO: Cannot convert {'data': 788} to Excel
+2021-07-21 19:00:56,596 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 19:02:04,014 test_01.py[line: 121] INFO: '操作成功' != 'userToken not exists'
+- 操作成功
++ userToken not exists
+
+2021-07-21 19:21:17,358 test_01.py[line: 79] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-21 19:21:17,505 test_01.py[line: 146] INFO: tuple index out of range
+2021-07-21 19:21:17,596 test_01.py[line: 121] INFO: '操作成功' != '您已经在别处登录，此登录已失效'
+- 操作成功
++ 您已经在别处登录，此登录已失效
+
+2021-07-21 19:23:44,310 test_01.py[line: 121] INFO: 'msg'
+2021-07-21 19:25:57,389 test_01.py[line: 121] INFO: 'msg'
+2021-07-21 19:26:58,636 test_01.py[line: 121] INFO: None != '操作成功'

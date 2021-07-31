@@ -1,0 +1,184 @@
+2021-07-22 08:32:30,222 test_02.py[line: 117] INFO: '用户名重复' != 'User token expired!'
+- 用户名重复
++ User token expired!
+
+2021-07-22 08:32:30,323 test_02.py[line: 117] INFO: '用户名不能为空' != 'User token expired!'
+- 用户名不能为空
++ User token expired!
+
+2021-07-22 08:32:30,425 test_02.py[line: 117] INFO: '用户名长度最高20位' != 'User token expired!'
+- 用户名长度最高20位
++ User token expired!
+
+2021-07-22 08:32:30,535 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:30,637 test_02.py[line: 117] INFO: '用户名只能是数字或者字符' != 'User token expired!'
+- 用户名只能是数字或者字符
++ User token expired!
+
+2021-07-22 08:32:30,747 test_02.py[line: 117] INFO: '用户名只能是数字或者字符' != 'User token expired!'
+- 用户名只能是数字或者字符
++ User token expired!
+
+2021-07-22 08:32:30,921 test_02.py[line: 139] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-22 08:32:31,073 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:31,198 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:31,300 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:31,408 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:31,511 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:31,700 test_02.py[line: 139] INFO: [Errno 13] Permission denied: 'D:\\其他\\interface/TestFile/interface.xlsx'
+2021-07-22 08:32:31,799 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:31,895 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:31,992 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:32,139 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:37,536 test_02.py[line: 117] INFO: '用户名重复' != 'User token expired!'
+- 用户名重复
++ User token expired!
+
+2021-07-22 08:32:37,715 test_02.py[line: 117] INFO: '用户名不能为空' != 'User token expired!'
+- 用户名不能为空
++ User token expired!
+
+2021-07-22 08:32:37,906 test_02.py[line: 117] INFO: '用户名长度最高20位' != 'User token expired!'
+- 用户名长度最高20位
++ User token expired!
+
+2021-07-22 08:32:38,107 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:38,286 test_02.py[line: 117] INFO: '用户名只能是数字或者字符' != 'User token expired!'
+- 用户名只能是数字或者字符
++ User token expired!
+
+2021-07-22 08:32:38,461 test_02.py[line: 117] INFO: '用户名只能是数字或者字符' != 'User token expired!'
+- 用户名只能是数字或者字符
++ User token expired!
+
+2021-07-22 08:32:39,033 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:39,275 test_02.py[line: 139] INFO: tuple index out of range
+2021-07-22 08:32:39,487 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:39,675 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:39,851 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:40,369 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:40,550 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:40,730 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:32:40,899 test_02.py[line: 117] INFO: '密码必须为包含字母和数字且长度为8到12位' != 'User token expired!'
+- 密码必须为包含字母和数字且长度为8到12位
++ User token expired!
+
+2021-07-22 08:33:04,395 test_02.py[line: 70] INFO: '获取验证码，连续3小时有' not found in '操作成功'
+2021-07-22 08:33:04,595 test_02.py[line: 79] INFO: 0 != -1
+2021-07-22 11:38:07,263 test_03.py[line: 61] INFO: '操作成功' != '用户名重复'
+- 操作成功
++ 用户名重复
+
+2021-07-22 11:38:07,940 test_03.py[line: 61] INFO: '操作成功' != '存在自定义扩展码不能删除'
+- 操作成功
++ 存在自定义扩展码不能删除
+
+2021-07-22 11:48:37,426 test_03.py[line: 79] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/add' at line 1")
+2021-07-22 11:48:37,733 test_03.py[line: 79] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/find' at line 1")
+2021-07-22 11:48:38,060 test_03.py[line: 79] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/update' at line 1")
+2021-07-22 11:48:38,349 test_03.py[line: 79] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/delete' at line 1")
+2021-07-22 11:50:39,077 test_03.py[line: 80] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/add' at line 1")
+2021-07-22 11:50:39,302 test_03.py[line: 80] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/find' at line 1")
+2021-07-22 11:50:39,595 test_03.py[line: 80] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/update' at line 1")
+2021-07-22 11:50:39,807 test_03.py[line: 80] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/delete' at line 1")
+2021-07-22 11:51:44,537 test_03.py[line: 78] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/add' at line 1")
+2021-07-22 11:51:44,783 test_03.py[line: 78] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/find' at line 1")
+2021-07-22 11:51:45,048 test_03.py[line: 78] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/update' at line 1")
+2021-07-22 11:51:45,361 test_03.py[line: 78] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/delete' at line 1")
+2021-07-22 12:27:31,535 test_03.py[line: 78] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/add' at line 1")
+2021-07-22 12:29:24,938 test_03.py[line: 79] INFO: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ui/user/add' at line 1")
+2021-07-22 12:34:38,131 test_03.py[line: 67] INFO: 0 != '操作成功'
+2021-07-22 12:34:38,649 test_03.py[line: 60] INFO: '操作成功' != '存在自定义扩展码不能删除'
+- 操作成功
++ 存在自定义扩展码不能删除
+
+2021-07-22 12:36:53,045 test_03.py[line: 60] INFO: '操作成功' != '存在自定义扩展码不能删除'
+- 操作成功
++ 存在自定义扩展码不能删除
+
+2021-07-22 12:41:41,219 test_03.py[line: 81] INFO: tuple index out of range
+2021-07-22 12:41:41,404 test_03.py[line: 67] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:41:41,589 test_03.py[line: 60] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:41:41,766 test_03.py[line: 60] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:44:02,900 test_03.py[line: 81] INFO: tuple index out of range
+2021-07-22 12:44:03,087 test_03.py[line: 67] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:44:03,268 test_03.py[line: 60] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:44:03,448 test_03.py[line: 60] INFO: 'NoneType' object is not subscriptable
+2021-07-22 12:44:57,051 test_03.py[line: 60] INFO: '操作成功' != '用户名重复'
+- 操作成功
++ 用户名重复
+
+2021-07-22 12:49:55,666 test_03.py[line: 68] INFO: 0 != -1
+2021-07-22 12:49:55,875 test_03.py[line: 61] INFO: '操作成功' != '未找到此用户'
+- 操作成功
++ 未找到此用户
+
+2021-07-22 12:49:56,092 test_03.py[line: 61] INFO: '操作成功' != '删除用户异常'
+- 操作成功
++ 删除用户异常
+
+2021-07-22 12:57:43,422 test_03.py[line: 69] INFO: 0 != -1
+2021-07-22 12:57:43,635 test_03.py[line: 62] INFO: '操作成功' != '未找到此用户'
+- 操作成功
++ 未找到此用户
+
+2021-07-22 12:57:43,846 test_03.py[line: 62] INFO: '操作成功' != '删除用户异常'
+- 操作成功
++ 删除用户异常
+
+2021-07-22 12:58:44,262 test_03.py[line: 69] INFO: 0 != -1
+2021-07-22 12:58:44,473 test_03.py[line: 62] INFO: '操作成功' != '未找到此用户'
+- 操作成功
++ 未找到此用户
+
+2021-07-22 12:58:44,693 test_03.py[line: 62] INFO: '操作成功' != '删除用户异常'
+- 操作成功
++ 删除用户异常
+
+2021-07-22 13:11:12,717 test_03.py[line: 62] INFO: '操作成功' != '用户名重复'
+- 操作成功
++ 用户名重复
+
+2021-07-22 13:15:13,003 test_03.py[line: 62] INFO: '操作成功' != '用户名重复'
+- 操作成功
++ 用户名重复
+

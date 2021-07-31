@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+.img{
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+    border: 2px solid #777;
+}
+
+.screenshots {
+    z-index: 100;
+	position:absolute;
+	left: 23%;
+	top: 20%;
+	display: none;
+}
+.close_shots {
+	position:absolute;
+	top:0; left:98%;
+	z-index:99;
+	width:20px;
+}
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+
+.piechart{
+    position:absolute;  ;
+    top:20px;
+    left:300px;
+    width: 200px;
+    float: left;
+    display:  inline;
+}
+
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+function drawCircle(pass, fail, error){
+    var color = ["#6c6","#c60","#c00"];
+    var data = [pass,fail,error];
+    var text_arr = ["pass", "fail", "error"];
+
+    var canvas = document.getElementById("circle");
+    var ctx = canvas.getContext("2d");
+    var startPoint=0;
+    var width = 20, height = 10;
+    var posX = 112 * 2 + 20, posY = 30;
+    var textX = posX + width + 5, textY = posY + 10;
+    for(var i=0;i<data.length;i++){
+        ctx.fillStyle = color[i];
+        ctx.beginPath();
+        ctx.moveTo(112,84);
+        ctx.arc(112,84,84,startPoint,startPoint+Math.PI*2*(data[i]/(data[0]+data[1]+data[2])),false);
+        ctx.fill();
+        startPoint += Math.PI*2*(data[i]/(data[0]+data[1]+data[2]));
+        ctx.fillStyle = color[i];
+        ctx.fillRect(posX, posY + 20 * i, width, height);
+        ctx.moveTo(posX, posY + 20 * i);
+        ctx.font = 'bold 14px';
+        ctx.fillStyle = color[i];
+        var percent = text_arr[i] + ":"+data[i];
+        ctx.fillText(percent, textX, textY + 20 * i);
+
+    }
+}
+
+function show_shots(obj) {
+	obj.nextElementSibling.style.display="block";
+
+}
+
+function close_shots(obj) {
+	obj.parentElement.style.display="none";
+}
+
+</script>
+<div class="piechart">
+    <div>
+        <canvas id="circle" width="350" height="168" </canvas>
+    </div>
+</div>
+<div class='heading'>
+<h1>自动化测试报告</h1>
+<p class='attribute'><strong>开始时间:</strong> 2021-07-22 13:22:09</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:02.293416</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>4 <span class="tj errorCase">Error</span>1</p>
+
+<p class='description'>用例执行情况</p>
+</div>
+
+
+
+<p id='show_detail_line'>显示
+<a href='javascript:showCase(0)'>概要</a>
+<a href='javascript:showCase(1)'>失败</a>
+<a href='javascript:showCase(2)'>所有</a>
+</p>
+
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>测试组/测试用例</td>
+    <td>总数</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>视图</td>
+    <td>错误截图</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_user.Test_case01</td>
+    <td>5</td>
+    <td>4</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',5)">详情</a></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td ><div class='testcase'>test_user_1_用户新增</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a></span>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: ['case_001', '用户新增', 'yes', None, "SELECT * FROM hsp_user.`user` WHERE username = 'zhan689' ORDER BY id desc", '/ui/user/add', 'post', '{\n"addExtendNumber": false,\n"allowUnsubscribeKeywords": false,\n"businessType": 3,\n"chargingMethod": 1,\n"checkIp": false,\n"contentWithKeyword": false,\n"contentWithSignature": false,\n"enableCaptchaBlacklist": false,\n"enableProhibitedWords": true,\n"enableProvincialChannel": true,\n"fullName": "",\n"matchingPattern": 1,\n"moSpNumbers": "",\n"mobile": "13511055879",\n"openFrequencyLimit": false,\n"organizationId": 237,\n"password": "123456qQ",\n"protocol": 4,\n"remarks": "",\n"sendTimeEnd": "",\n"sendTimeStart": "",\n"smsIdentity16bit": false,\n"status": 0,\n"unitPrice": "",\n"userType": 3,\n"username": "zhan689"\n}', '{"content-type": "application/json", "charset": "UTF-8"}', '操作成功', 'sql', '成功', '{"msg": "操作成功", "status": 0}', '{"id": 801, "name": "zhan689"}', None]
+{'msg': '操作成功', 'status': 0}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td ><div class='testcase'>test_user_2_获取用户信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a></span>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: ['case_002', '获取用户信息', 'yes', 'case_001&gt;14&gt;id', None, '/ui/user/find', 'get', '{}', '{"charset": "UTF-8"}', 0, 'code', '成功', '{"msg": "操作成功", "status": 0, "data": {"username": "zhan689", "mobile": "13511055879", "password": null, "validIp": null, "checkIp": false, "passwordExpireTime": 0, "fullName": "", "userType": {"value": 3, "display": "接口用户"}, "protocol": {"value": 4, "display": "HTTP"}, "status": {"value": 0, "display": "启用"}, "matchingPattern": {"value": 1, "display": "绑定"}, "businessType": {"value": 3, "code": "HY", "display": "行业"}, "unitPrice": "", "addExtendNumber": false, "enableProvincialChannel": true, "enableProhibitedWords": true, "allowUnsubscribeKeywords": false, "sendTimeStart": 0, "sendTimeEnd": 24, "chargingMethod": {"value": 1, "display": "成功计费"}, "remarks": "", "organizationId": 237, "contentWithSignature": false, "contentWithKeyword": false, "openFrequencyLimit": false, "smsIdentity16bit": false, "moSpNumbers": null, "messageType": {"value": 1, "display": "短信"}, "enableCaptchaBlacklist": false, "id": 801, "addTime": "2021-07-22 13:20:50", "updateTime": "2021-07-22 13:20:50", "organizationName": "1.4.1", "admin": false}}', None, 'url']
+&lt;class 'str'&gt;
+{'msg': '操作成功', 'status': 0, 'data': {'username': 'zhan689', 'mobile': '13511055879', 'password': None, 'validIp': None, 'checkIp': False, 'passwordExpireTime': 0, 'fullName': '', 'userType': {'value': 3, 'display': '接口用户'}, 'protocol': {'value': 4, 'display': 'HTTP'}, 'status': {'value': 0, 'display': '启用'}, 'matchingPattern': {'value': 1, 'display': '绑定'}, 'businessType': {'value': 3, 'code': 'HY', 'display': '行业'}, 'unitPrice': '', 'addExtendNumber': False, 'enableProvincialChannel': True, 'enableProhibitedWords': True, 'allowUnsubscribeKeywords': False, 'sendTimeStart': 0, 'sendTimeEnd': 24, 'chargingMethod': {'value': 1, 'display': '成功计费'}, 'remarks': '', 'organizationId': 237, 'contentWithSignature': False, 'contentWithKeyword': False, 'openFrequencyLimit': False, 'smsIdentity16bit': False, 'moSpNumbers': None, 'messageType': {'value': 1, 'display': '短信'}, 'enableCaptchaBlacklist': False, 'id': 802, 'addTime': '2021-07-22 13:22:11', 'updateTime': '2021-07-22 13:22:11', 'organizationName': '1.4.1', 'admin': False}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td ><div class='testcase'>test_user_3_用户信息更新</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a></span>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: ['case_003', '用户信息更新', 'yes', 'case_001&gt;14&gt;id', None, '/ui/user/update', 'put', '{\n"addExtendNumber": false,\n"allowUnsubscribeKeywords": false,\n"businessType": 3,\n"chargingMethod": 1,\n"checkIp": false,\n"contentWithKeyword": false,\n"contentWithSignature": false,\n"enableCaptchaBlacklist": false,\n"enableProhibitedWords": true,\n"enableProvincialChannel": true,\n"fullName": "",\n"id":660,\n"matchingPattern": 1,\n"moSpNumbers": "",\n"mobile": "13511055879",\n"openFrequencyLimit": false,\n"organizationId": 237,\n"password": "123456qQ",\n"protocol": 4,\n"remarks": "这是一个备注字段",\n"sendTimeEnd": "",\n"sendTimeStart": "",\n"smsIdentity16bit": false,\n"status": 0,\n"unitPrice": "",\n"userType": 3,\n"username": "zhan689"\n}', '{"content-type": "application/json", "charset": "UTF-8"}', '操作成功', 'msg', '成功', '{"msg": "操作成功", "status": 0, "data": {"username": "zhan689", "mobile": "13511055879", "password": "123456qQ", "validIp": null, "checkIp": false, "passwordExpireTime": null, "fullName": "", "userType": {"value": 3, "display": "接口用户"}, "protocol": {"value": 4, "display": "HTTP"}, "status": {"value": 0, "display": "启用"}, "matchingPattern": {"value": 1, "display": "绑定"}, "businessType": {"value": 3, "code": "HY", "display": "行业"}, "unitPrice": "", "addExtendNumber": false, "enableProvincialChannel": true, "enableProhibitedWords": true, "allowUnsubscribeKeywords": false, "sendTimeStart": 0, "sendTimeEnd": 24, "chargingMethod": {"value": 1, "display": "成功计费"}, "remarks": "这是一个备注字段", "organizationId": 237, "contentWithSignature": false, "contentWithKeyword": false, "openFrequencyLimit": false, "smsIdentity16bit": false, "moSpNumbers": null, "messageType": null, "enableCaptchaBlacklist": false, "id": 801, "addTime": "2021-07-22 13:20:50", "updateTime": "2021-07-22 13:20:51", "organizationName": null, "admin": false}}', None, 'data']
+&lt;class 'str'&gt;
+{'msg': '操作成功', 'status': 0, 'data': {'username': 'zhan689', 'mobile': '13511055879', 'password': '123456qQ', 'validIp': None, 'checkIp': False, 'passwordExpireTime': None, 'fullName': '', 'userType': {'value': 3, 'display': '接口用户'}, 'protocol': {'value': 4, 'display': 'HTTP'}, 'status': {'value': 0, 'display': '启用'}, 'matchingPattern': {'value': 1, 'display': '绑定'}, 'businessType': {'value': 3, 'code': 'HY', 'display': '行业'}, 'unitPrice': '', 'addExtendNumber': False, 'enableProvincialChannel': True, 'enableProhibitedWords': True, 'allowUnsubscribeKeywords': False, 'sendTimeStart': 0, 'sendTimeEnd': 24, 'chargingMethod': {'value': 1, 'display': '成功计费'}, 'remarks': '这是一个备注字段', 'organizationId': 237, 'contentWithSignature': False, 'contentWithKeyword': False, 'openFrequencyLimit': False, 'smsIdentity16bit': False, 'moSpNumbers': None, 'messageType': None, 'enableCaptchaBlacklist': False, 'id': 802, 'addTime': '2021-07-22 13:22:11', 'updateTime': '2021-07-22 13:22:11', 'organizationName': None, 'admin': False}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td ><div class='testcase'>test_user_4_用户删除</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status passCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        通过</a></span>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: ['case_004', '用户删除', 'yes', 'case_001&gt;14&gt;id', None, '/ui/user/delete', 'delete', '{}', '{"charset": "UTF-8"}', '操作成功', 'msg', '成功', '{"msg": "操作成功", "status": 0}', None, 'url']
+&lt;class 'str'&gt;
+{'msg': '操作成功', 'status': 0}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td ><div class='testcase'>test_user_5_None</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <span class='status errorCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        错误</a></span>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\ddt.py", line 192, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\其他\interface\Case\test_user.py", line 33, in test_user
+    url = config_url + base_url
+TypeError: must be str, not NoneType
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td></td>
+</tr>
+
+<tr id='total_row'>
+    <td>统计</td>
+    <td>5</td>
+    <td>4</td>
+    <td>0</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+<script>
+    drawCircle(4, 0, 1)
+</script>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
